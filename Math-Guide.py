@@ -1,4 +1,4 @@
-"""Math-Guide the project 3/12/2557 AM2.11"""
+"""Math-Guide the project 6/12/2557 AM0.50+"""
 def npowset_set(setnumber):
     """Find how many member in power set v.set"""
     return len(setnumber)**2
@@ -15,14 +15,12 @@ def same_member(setnumber):
             box.append(i)
     return box
 
-##def pow_set(setnumber):
-##    """Make power set from set"""
-##    setnumber = same_member(setnumber)
-##    for i in setnumber: ##waiting for solving if 4+ member
-##        box.append(i)
-##        for j in setnumber:
-##            if i != j:
-##                box.append(i, j)
+def list_powerset(box):
+    """Find powerset"""
+    result = [[]]
+    for i in same_member(box):
+        result.extend([subset + [i] for subset in result])
+    return result
 
 def is_subset():
     """check subset list to list"""
@@ -48,3 +46,22 @@ def is_member():
     if checknumber not in main:
         return False
     return True
+
+def union(box, box2):
+    """union set fuction"""
+    for i in box2:
+        box.append(i)
+    return same_member(box)
+
+def inter_and_com(box, box2):
+    """
+    this function can use for intersect and Compliment in one
+    if you want to use for Compliment you replace 'box' with universe
+    and 'box2' is what ever set that you want to compliment
+    but normaly i made this function for intersection so box is mainset
+    and box2 is set that use for remove from set one
+    """
+    for i in box2:
+        if i in box:
+            box.remove(i)
+    return box
