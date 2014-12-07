@@ -1,4 +1,20 @@
-"""Math-Guide the project 6/12/2557 AM0.50+"""
+"""Math-Guide the project 7/12/2557 PM10.06+"""
+##______________Tkinter zone_____________________________
+
+import sys
+from Tkinter import *
+import tkMessageBox ##Reply massage box
+
+mGui = Tk()
+mGui.geometry('600x400')
+mGui.title("Test Tkinter")
+def helloCallBack(): ##Reply massage box
+    tkMessageBox.showinfo( "Hello Python", "Hello World") ##Reply massage box
+B = Button(text ="Button", command = helloCallBack) ##button Reply massage box
+B.pack()
+mGui.mainloop()
+##________________SET____________________________________
+
 def npowset_set(setnumber):
     """Find how many member in power set v.set"""
     return len(setnumber)**2
@@ -65,3 +81,47 @@ def inter_and_com(box, box2):
         if i in box:
             box.remove(i)
     return box
+
+##______________Prapod___propositional logic_______________
+
+def not_pl(word):
+    """logic function for change into opposite"""
+    if word == True:
+        return False
+    else:
+        return True
+
+def and_pl(word, word2):
+    """logic function for check if word one and two are True"""
+    if word == True and word2 == True:
+        return True
+    else:
+        return False
+
+def or_pl(word, word2):
+    """
+    logic function for check word one and two are False and return themself
+    """
+    if word == False and word2 == False:
+        return False
+    else:
+        return True
+
+def if_so_pl(word, word2):
+    """
+    logic function for check if word(True) so word2(False)
+    it will return False
+    """
+    if word == True and word2 == False:
+        return False
+    else:
+        return True
+
+def when_pl(word, word2):
+    """logic function for check if word one and two are the same"""
+    if word == word2:
+        return True
+    else:
+        return False
+
+##def in_one_line: waiting for solving....            
