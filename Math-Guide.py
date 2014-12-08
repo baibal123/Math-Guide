@@ -1,18 +1,83 @@
-"""Math-Guide the project 7/12/2557 PM10.06+"""
+"""Math-Guide the project 8/12/2557 PM6.26+"""
 ##______________Tkinter zone_____________________________
-
 import sys
 from Tkinter import *
-import tkMessageBox ##Reply massage box
+import tkMessageBox
 
-mGui = Tk()
-mGui.geometry('600x400')
-mGui.title("Test Tkinter")
-def helloCallBack(): ##Reply massage box
-    tkMessageBox.showinfo( "Hello Python", "Hello World") ##Reply massage box
-B = Button(text ="Button", command = helloCallBack) ##button Reply massage box
-B.pack()
-mGui.mainloop()
+homepage = Tk()
+
+homepage.geometry('450x350')
+
+photo = PhotoImage(file="Teammy.gif")
+label = Label(image=photo)
+label.image = photo
+label.grid(row =0, column =0)
+
+def donothing():
+    pass
+
+Button1 = Button(text ="Chapter 1 - Set", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =1, column =0, sticky = W)
+Button2 = Button(text ="Chapter 2 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =2, column =0, sticky = W)
+Button3 = Button(text ="Chapter 3 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =3, column =0, sticky = W)
+Button4 = Button(text ="Chapter 4 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =4, column =0, sticky = W)
+Button5 = Button(text ="Chapter 5 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =5, column =0, sticky = W)
+
+texti = Label(text = 'test-->Chapter', fg = 'yellow', bg = 'black', height = 3, width = 20).grid(row =6, column =0, sticky = W)
+
+Button1 = Button(text ="1", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 146, y = 298)
+Button2 = Button(text ="2", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 191, y = 298)
+Button3 = Button(text ="3", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 236, y = 298)
+Button4 = Button(text ="4", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 281, y = 298)
+Button5 = Button(text ="5", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 326, y = 298)
+Button6 = Button(text ="Final", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 10).place(x = 371, y = 298)
+
+homepage.mainloop()
+##import sys
+##from Tkinter import *
+##import tkMessageBox ##Reply massage box
+##
+##mGui = Tk()
+##dummy = StringVar()
+##
+##mGui.geometry('600x400')
+##mGui.title("Test Tkinter")
+##def helloCallBack(): ##Reply massage box
+##    tkMessageBox.showinfo( "HEAD LINE", "my first testing TKinter") ##Reply massage box
+##    texti2 = Label(mGui, text = 'For testing place', fg = 'white', bg = 'black').place(x = 100, y = 100)
+##    texti3 = Label(mGui, text = 'For testing place', fg = 'white', bg = 'blue').place(x = 100, y = 200)
+##    texti4 = Label(mGui, text = 'For testing place', fg = 'black', bg = 'red').place(x = 200, y = 100)
+##texti = Label(text = 'For testing', fg = 'white', bg = 'black').pack() ##for text
+###texti5 = Label(text = 'For testing grid', fg = 'white', bg = 'black').grid(row =0, column =0, sticky =w)
+###texti6 = Label(text = 'For testing grid', fg = 'white', bg = 'blue').grid(row =1, column =0)
+###texti7 = Label(text = 'For testing grid', fg = 'black', bg = 'red').grid(row =0, column =1)
+##B = Button(text ="Button", command = helloCallBack, fg = 'white', bg = 'red') ##button Reply massage box
+##B.pack() ##For Showing the Button or another
+##
+##texti = Label(text = 'For testing button and entry', fg = 'white', bg = 'black').pack()
+##
+##def test_entry():
+##    mntry = Entry(mGui, textvariable = dummy).pack()
+##    mbutton = Button(mGui, text = 'ok', command = showdummy).pack()
+##
+##def showdummy():
+##    mtext = dummy.get()
+##    texti2 = Label(text = mtext, fg = 'white', bg = 'black').pack()
+##    
+##mbutton = Button(mGui, text = 'text', command = test_entry).pack()
+##
+##menubar = Menu(mGui)
+##
+##filemenu = Menu(menubar)
+##filemenu.add_command(label="New")
+##filemenu.add_command(label="Open")
+##filemenu.add_command(label="Save As...")
+##filemenu.add_command(label="Close")
+##
+##menubar.add_cascade(label = "file", menu = filemenu)
+##
+##mGui.config(menu=menubar)
+##
+##mGui.mainloop()
 ##________________SET____________________________________
 
 def npowset_set(setnumber):
