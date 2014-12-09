@@ -53,21 +53,74 @@ def closehomepage():
 
 def chapter1():
     homepage.destroy()
-    set_page = Tk()
     global set_page
+    set_page = Tk()
     set_page.geometry('875x600')
     photo = PhotoImage(file="Set_page1.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
+    menubar = Menu(set_page)
+    filemenu = Menu(menubar, tearoff=0)
+    filemenu.add_command(label="Score")
+    filemenu.add_separator()
+    filemenu.add_command(label="Exit", command = close_set)
+    menubar.add_cascade(label = "File", menu = filemenu)
+    helpmenu = Menu(menubar, tearoff=0)
+    helpmenu.add_command(label="Instuction")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Credits", command = credit)
+    menubar.add_cascade(label = "Help", menu = helpmenu)
+    set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = chapter1page2 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def close_set():
+    exits = tkMessageBox.askyesno('Exit', 'Are you sure?')
+    if exits > 0:
+        set_page.destroy()
 
 def chapter1page2():
     photo = PhotoImage(file="Set_page2.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter1page3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def chapter1page3():
+    photo = PhotoImage(file="Set_page3.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter1page4 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def chapter1page4():
+    photo = PhotoImage(file="Set_page4.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter1page5 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def chapter1page5():
+    photo = PhotoImage(file="Set_page5.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter1page6 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def chapter1page6():
+    photo = PhotoImage(file="Set_page6.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter1page7 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def chapter1page7():
+    photo = PhotoImage(file="Set_page7.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
 
 homepagedef()
 ##import sys
