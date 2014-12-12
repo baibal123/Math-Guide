@@ -3,6 +3,8 @@
 import sys
 from Tkinter import *
 import tkMessageBox
+from PIL import Image, ImageTk
+
 def homepagedef():
     global homepage
     homepage = Tk()
@@ -12,7 +14,7 @@ def homepagedef():
     label.image = photo
     label.grid(row =0, column =0)
     Button1 = Button(text ="Chapter 1 - Set", command = chapter1 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =1, column =0, sticky = W)
-    Button2 = Button(text ="Chapter 2 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =2, column =0, sticky = W)
+    Button2 = Button(text ="Chapter 2 - Logic", command = chapter2 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =2, column =0, sticky = W)
     Button3 = Button(text ="Chapter 3 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =3, column =0, sticky = W)
     Button4 = Button(text ="Chapter 4 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =4, column =0, sticky = W)
     Button5 = Button(text ="Chapter 5 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =5, column =0, sticky = W)
@@ -74,6 +76,7 @@ def chapter1():
     set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = chapter1page2 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
 
+
 def close_set():
     exits = tkMessageBox.askyesno('Exit', 'Are you sure?')
     if exits > 0:
@@ -120,6 +123,180 @@ def chapter1page7():
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def chapter2():
+    homepage.destroy()
+    global set_page
+    set_page = Tk()
+    set_page.geometry('875x600')
+    image = Image.open("logic1.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    menubar = Menu(set_page)
+    filemenu = Menu(menubar, tearoff=0)
+    filemenu.add_command(label="Score")
+    filemenu.add_separator()
+    filemenu.add_command(label="Exit", command = close_set)
+    menubar.add_cascade(label = "File", menu = filemenu)
+    helpmenu = Menu(menubar, tearoff=0)
+    helpmenu.add_command(label="Instuction")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Credits", command = credit)
+    menubar.add_cascade(label = "Help", menu = helpmenu)
+    set_page.config(menu=menubar)
+    Buttont1 = Button(text ="Next", command = chapter2page2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page2():
+    image = Image.open("logic2.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page3():
+    image = Image.open("logic3.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page4():
+    image = Image.open("logic4.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page5():
+    image = Image.open("logic5.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page6 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page6():
+    image = Image.open("logic6.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page7 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+def chapter2page7():
+    image = Image.open("logic7.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page8 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page8():
+    image = Image.open("logic8.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page9 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+def chapter2page9():
+    image = Image.open("logic9.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page10 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page10():
+    image = Image.open("logic10.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page11 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page11():
+    image = Image.open("logic11.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page12 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page12():
+    image = Image.open("logic12.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page13 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page13():
+    image = Image.open("logic13.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page14 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page14():
+    image = Image.open("logic14.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page15 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page15():
+    image = Image.open("logic15.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page16 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page16():
+    image = Image.open("logic16.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page17 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page17():
+    image = Image.open("logic17.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page18 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page18():
+    image = Image.open("logic18.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page19 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page19():
+    image = Image.open("logic19.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = chapter2page19 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def chapter2page20():
+    image = Image.open("logic20.jpg")
+    photo = ImageTk.PhotoImage(image)
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = homepagedef , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 
 homepagedef()
