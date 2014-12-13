@@ -3,7 +3,7 @@
 import sys
 from Tkinter import *
 import tkMessageBox
-from PIL import Image, ImageTk
+
 
 def homepagedef():
     global homepage
@@ -129,8 +129,7 @@ def chapter2():
     global set_page
     set_page = Tk()
     set_page.geometry('875x600')
-    image = Image.open("logic1.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic1.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
@@ -149,152 +148,133 @@ def chapter2():
     Buttont1 = Button(text ="Next", command = chapter2page2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page2():
-    image = Image.open("logic2.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic2.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page3():
-    image = Image.open("logic3.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic3.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page4():
-    image = Image.open("logic4.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic4.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page5():
-    image = Image.open("logic5.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic5.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page6 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page6():
-    image = Image.open("logic6.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic6.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page7 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page7():
-    image = Image.open("logic7.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic7.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page8 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page8():
-    image = Image.open("logic8.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic8.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page9 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page9():
-    image = Image.open("logic9.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic9.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page10 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page10():
-    image = Image.open("logic10.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic10.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page11 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page11():
-    image = Image.open("logic11.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic11.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page12 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page12():
-    image = Image.open("logic12.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic12.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page13 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page13():
-    image = Image.open("logic13.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic13.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page14 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page14():
-    image = Image.open("logic14.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic14.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page15 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page15():
-    image = Image.open("logic15.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic15.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page16 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page16():
-    image = Image.open("logic16.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic16.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page17 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page17():
-    image = Image.open("logic17.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic17.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page18 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page18():
-    image = Image.open("logic18.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic18.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page19 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page19():
-    image = Image.open("logic19.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic19.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter2page19 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page20():
-    image = Image.open("logic20.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="logic20.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
@@ -305,8 +285,7 @@ def chapter3():
     global set_page
     set_page = Tk()
     set_page.geometry('875x600')
-    image = Image.open("reasoning.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="reasoning.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
@@ -325,40 +304,35 @@ def chapter3():
     Buttont1 = Button(text ="Next", command = chapter3page2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter3page2():
-    image = Image.open("reasoning2.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="reasoning2.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter3page3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter3page3():
-    image = Image.open("reasoning3.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="reasoning3.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter3page4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter3page4():
-    image = Image.open("reasoning4.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="reasoning4.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter3page5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter3page5():
-    image = Image.open("reasoning5.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="reasoning5.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = chapter3page6 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter3page6():
-    image = Image.open("reasoning6.jpg")
-    photo = ImageTk.PhotoImage(image)
+    photo = PhotoImage(file="reasoning6.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
