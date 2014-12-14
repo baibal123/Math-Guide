@@ -340,14 +340,43 @@ def chapter2page19():
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page19 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Next", command = chapter2page20 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
 
 def chapter2page20():
     photo = PhotoImage(file="logic20.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = homepagedef , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Next", command = test2page1 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+
+def test2page1():
+    photo = PhotoImage(file="logic_quiz1.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Yes", command = correct3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 110, y = 60)
+    Buttont2 = Button(text ="No", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 180, y = 60)
+    Buttont3 = Button(text ="Yes", command = correct3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 110, y = 155)
+    Buttont4 = Button(text ="No", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 180, y = 155)
+    Buttont5 = Button(text ="Yes", command = correct3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 110, y = 253)
+    Buttont6 = Button(text ="No", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 180, y = 253)
+    Buttont7 = Button(text ="Yes", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 110, y = 348)
+    Buttont8 = Button(text ="No", command = correct3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 180, y = 348)
+    Buttont9 = Button(text ="Yes", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 110, y = 440)
+    Buttont10 = Button(text ="No", command = correct3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 180, y = 440)
+    Buttont11 = Button(text ="Yes", command = correct3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 110, y = 535)
+    Buttont12 = Button(text ="No", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 180, y = 535)
+    Buttont13 = Button(text ="Next", command = ans_page3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 775, y = 550)
+
+def ans_page3():
+    photo = PhotoImage(file="logic_quiz1ans.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = back , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+
+def correct3():
+    tkMessageBox.showinfo("Answer", "Correct!!")
 
 def chapter3():
     homepage.destroy()
