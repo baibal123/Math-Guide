@@ -77,8 +77,8 @@ def chapter1():
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = nextpage1 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
-
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 def nextpage1():
     """control page to show"""
@@ -86,6 +86,15 @@ def nextpage1():
     page += 1
     if page >= len(chap1):
         test1page1()
+    else:
+        chapter1page(page)
+
+def backpage1():
+    """control back page to show"""
+    global page, chap1
+    page -= 1
+    if page < 0:
+        back()
     else:
         chapter1page(page)
 
@@ -97,8 +106,8 @@ def chapter1page(page):
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = nextpage1 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
-
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = backpage1, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
     
 def close_set():
     """Exit the program while in chapter"""
@@ -260,8 +269,8 @@ def chapter2():
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = nextpage2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
-
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 def nextpage2():
     """control page to show"""
@@ -269,6 +278,15 @@ def nextpage2():
     page += 1
     if page >= len(chap2):
         test2page1()
+    else:
+        chapter2page(page)
+
+def backpage2():
+    """control back page to show"""
+    global page, chap2
+    page -= 1
+    if page < 0:
+        back()
     else:
         chapter2page(page)
 
@@ -280,8 +298,8 @@ def chapter2page(page):
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = nextpage2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
-
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = backpage2, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
   
 def test2page1():
     """test chap2 page1"""
@@ -339,9 +357,9 @@ def chapter3():
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = nextpage3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
-
-
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+  
 def nextpage3():
     """control page to show"""
     global page, chap3
@@ -351,6 +369,16 @@ def nextpage3():
     else:
         chapter3page(page)
 
+def backpage3():
+    """control back page to show"""
+    global page, chap3
+    page -= 1
+    if page < 0:
+        back()
+    else:
+        chapter3page(page)
+
+
 def chapter3page(page):
     """once of page"""
     global chap3
@@ -359,7 +387,8 @@ def chapter3page(page):
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = nextpage3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)    
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
+    Backpage = Button(text ="Back", command = backpage3, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 def test_chap3():
     """test by using typing for answer"""
@@ -420,7 +449,8 @@ def chapter4():
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = nextpage4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 
 def nextpage4():
@@ -432,6 +462,16 @@ def nextpage4():
     else:
         chapter4page(page)
 
+def backpage4():
+    """control back page to show"""
+    global page, chap4
+    page -= 1
+    if page < 0:
+        back()
+    else:
+        chapter4page(page)
+
+
 def chapter4page(page):
     """once of page"""
     global chap4
@@ -440,7 +480,8 @@ def chapter4page(page):
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = nextpage4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)    
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
+    Backpage = Button(text ="Back", command = backpage4, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 def chapter5():
     """Chapter one recreate new window"""
@@ -469,7 +510,8 @@ def chapter5():
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
     Buttont1 = Button(text ="Next", command = nextpage5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)
+    Backpage = Button(text ="Back", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 
 def nextpage5():
@@ -481,6 +523,16 @@ def nextpage5():
     else:
         chapter5page(page)
 
+def backpage5():
+    """control back page to show"""
+    global page, chap5
+    page -= 1
+    if page < 0:
+        back()
+    else:
+        chapter5page(page)
+
+
 def chapter5page(page):
     """once of page"""
     global chap5
@@ -489,7 +541,8 @@ def chapter5page(page):
     label.image = photo
     label.grid(row =0, column =0)
     Buttont1 = Button(text ="Next", command = nextpage5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)    
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
+    Backpage = Button(text ="Back", command = backpage5, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 
 homepagedef()
