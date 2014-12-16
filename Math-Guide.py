@@ -22,8 +22,7 @@ def homepagedef():
     Buttont2 = Button(text ="2", command = test2page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 191, y = 298)
     Buttont3 = Button(text ="3", command = test3page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 236, y = 298)
     Buttont4 = Button(text ="4", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 281, y = 298)
-    Buttont5 = Button(text ="5", command = test5page1 , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 326, y = 298)
-    Buttont6 = Button(text ="Final", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 10).place(x = 371, y = 298)
+    Buttont5 = Button(text ="5", command = test5page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 326, y = 298)
 
     menubar = Menu(homepage)
     filemenu = Menu(menubar, tearoff=0)
@@ -164,6 +163,30 @@ def test1page1gui():
     Buttont2 = Button(text ="2.", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 540, y = 229)
     Buttont3 = Button(text ="3.", command = correct , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 540, y = 295)
     Buttont4 = Button(text ="4.", command = wrong , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 540, y = 364)
+    menubar = Menu(set_page)
+    filemenu = Menu(menubar, tearoff=0)
+    filemenu.add_separator()
+    filemenu.add_command(label="Exit", command = close_set)
+    menubar.add_cascade(label = "File", menu = filemenu)
+    helpmenu = Menu(menubar, tearoff=0)
+    helpmenu.add_command(label="Instuction")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Credits", command = credit)
+    menubar.add_cascade(label = "Help", menu = helpmenu)
+    set_page.config(menu=menubar)
+
+def test5page1gui():
+    """test page but run from interface"""
+    homepage.destroy()
+    global set_page
+    set_page = Tk()
+    set_page.geometry('875x600')
+    photo = PhotoImage(file="theoryquiz.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Answer", command = answer5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 15, y = 550)
     menubar = Menu(set_page)
     filemenu = Menu(menubar, tearoff=0)
     filemenu.add_separator()
