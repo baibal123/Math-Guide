@@ -45,7 +45,7 @@ def donothing():
 
 def credit():
     """Credits Box"""
-    tkMessageBox.showinfo("Credits", "Math-Guide V.1.0 create by baibal123(57070040)")
+    tkMessageBox.showinfo("Credits", "Math-Guide V.1.0 create by baibal123(57070040), Rycan(57070120)")
 
 def closehomepage():
     """Menu-->Exit the program"""
@@ -536,7 +536,7 @@ def nextpage5():
     global page, chap5
     page += 1
     if page >= len(chap5):
-        test5page1()
+        back()
     else:
         chapter5page(page)
 
