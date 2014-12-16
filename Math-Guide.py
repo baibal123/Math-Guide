@@ -15,8 +15,8 @@ def homepagedef():
     Button1 = Button(text ="Chapter 1 - Set", command = chapter1 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =1, column =0, sticky = W)
     Button2 = Button(text ="Chapter 2 - Logic", command = chapter2 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =2, column =0, sticky = W)
     Button3 = Button(text ="Chapter 3 - Reasoning", command = chapter3 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =3, column =0, sticky = W)
-    Button4 = Button(text ="Chapter 4 - Real Number", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =4, column =0, sticky = W)
-    Button5 = Button(text ="Chapter 5 - Number Theory", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =5, column =0, sticky = W)
+    Button4 = Button(text ="Chapter 4 - Real Number", command = chapter4 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =4, column =0, sticky = W)
+    Button5 = Button(text ="Chapter 5 - Number Theory", command = chapter5 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =5, column =0, sticky = W)
     texti = Label(text = 'test-->Chapter', fg = 'yellow', bg = 'black', height = 3, width = 20).grid(row =6, column =0, sticky = W)
     Buttont1 = Button(text ="1", command = test1page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 146, y = 298)
     Buttont2 = Button(text ="2", command = test2page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 191, y = 298)
@@ -393,6 +393,104 @@ def commit_ans():
         texti = Label(set_page, text = 'Wrong!', fg = 'black', bg = 'yellow').place(x = 285, y = 430)
     if count == 2:
         Buttont2 = Button(text ="Next", command = back , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 450)
+
+def chapter4():
+    """Chapter one recreate new window"""
+    homepage.destroy()
+    global set_page, page, chap4
+    chap4 = ["real1.gif", "real2.gif", "real3.gif", "real4.gif", "real5.gif", "real6.gif", "real7.gif",\
+             "real8.gif", "real9.gif", "real10.gif", "real11.gif", "real12.gif", "real13.gif", "real14.gif",\
+             "real15.gif", "real16.gif", "real17.gif", "real18.gif", "real19.gif", "real20.gif", ]
+    page = 0
+    set_page = Tk()
+    set_page.geometry('875x600')
+    photo = PhotoImage(file="real1.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    menubar = Menu(set_page)
+    filemenu = Menu(menubar, tearoff=0)
+    filemenu.add_separator()
+    filemenu.add_command(label="Exit", command = close_set)
+    menubar.add_cascade(label = "File", menu = filemenu)
+    helpmenu = Menu(menubar, tearoff=0)
+    helpmenu.add_command(label="Instuction")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Credits", command = credit)
+    menubar.add_cascade(label = "Help", menu = helpmenu)
+    set_page.config(menu=menubar)
+    Buttont1 = Button(text ="Next", command = nextpage4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+
+
+def nextpage4():
+    """control page to show"""
+    global page, chap4
+    page += 1
+    if page >= len(chap4):
+        back()
+    else:
+        chapter4page(page)
+
+def chapter4page(page):
+    """once of page"""
+    global chap4
+    photo = PhotoImage(file=chap4[page])
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = nextpage4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)    
+
+def chapter5():
+    """Chapter one recreate new window"""
+    homepage.destroy()
+    global set_page, page, chap5
+    chap5 = ["numbertheory1.gif", "numbertheory2.gif", "numbertheory3.gif", "numbertheory4.gif", "numbertheory5.gif",\
+             "numbertheory6.gif", "numbertheory7.gif", "numbertheory8.gif", "numbertheory9.gif", "numbertheory10.gif",\
+             "numbertheory11.gif", "numbertheory12.gif", "numbertheory13.gif", "numbertheory14.gif", "numbertheory15.gif",\
+             "numbertheory16.gif", ]
+    page = 0
+    set_page = Tk()
+    set_page.geometry('875x600')
+    photo = PhotoImage(file="numbertheory1.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    menubar = Menu(set_page)
+    filemenu = Menu(menubar, tearoff=0)
+    filemenu.add_separator()
+    filemenu.add_command(label="Exit", command = close_set)
+    menubar.add_cascade(label = "File", menu = filemenu)
+    helpmenu = Menu(menubar, tearoff=0)
+    helpmenu.add_command(label="Instuction")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Credits", command = credit)
+    menubar.add_cascade(label = "Help", menu = helpmenu)
+    set_page.config(menu=menubar)
+    Buttont1 = Button(text ="Next", command = nextpage5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+
+
+def nextpage5():
+    """control page to show"""
+    global page, chap5
+    page += 1
+    if page >= len(chap5):
+        back()
+    else:
+        chapter5page(page)
+
+def chapter5page(page):
+    """once of page"""
+    global chap5
+    photo = PhotoImage(file=chap5[page])
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = nextpage5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)    
+
 
 homepagedef()
 ##import sys
