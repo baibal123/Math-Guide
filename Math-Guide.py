@@ -21,8 +21,14 @@ def homepagedef():
     Buttont1 = Button(text ="1", command = test1page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 146, y = 298)
     Buttont2 = Button(text ="2", command = test2page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 191, y = 298)
     Buttont3 = Button(text ="3", command = test3page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 236, y = 298)
+<<<<<<< HEAD
     Buttont4 = Button(text ="4", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 281, y = 298)
     Buttont5 = Button(text ="5", command = test5page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 326, y = 298)
+=======
+    Buttont4 = Button(text ="4", command = test4page1 , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 281, y = 298)
+    Buttont5 = Button(text ="5", command = test5page1 , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 326, y = 298)
+    Buttont6 = Button(text ="Final", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 10).place(x = 371, y = 298)
+>>>>>>> 7ab7a69f44a1733bdfa4eb4b5b07ede9a8ed5605
 
     menubar = Menu(homepage)
     filemenu = Menu(menubar, tearoff=0)
@@ -44,7 +50,7 @@ def donothing():
 
 def credit():
     """Credits Box"""
-    tkMessageBox.showinfo("Credits", "Math-Guide V.1.0 create by baibal123(57070040)")
+    tkMessageBox.showinfo("Credits", "Math-Guide V.1.0 create by baibal123(57070040), Rycan(57070120)")
 
 def closehomepage():
     """Menu-->Exit the program"""
@@ -490,7 +496,7 @@ def backpage4():
     global page, chap4
     page -= 1
     if page < 0:
-        back()
+        test4page1()
     else:
         chapter4page(page)
 
@@ -505,6 +511,23 @@ def chapter4page(page):
     Buttont1 = Button(text ="Next", command = nextpage4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
     Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
     Backpage = Button(text ="Back", command = backpage4, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+
+def test4page1():
+    """quiz for number theory substance"""
+    photo = PhotoImage(file="realquiz.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Answer", command = answer5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 15, y = 550)
+
+def answer5():
+    photo = PhotoImage(file="ansreal.gif")
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
+    Backpage = Button(text ="Back", command = test5quiz, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 def chapter5():
     """Chapter one recreate new window"""
@@ -542,7 +565,7 @@ def nextpage5():
     global page, chap5
     page += 1
     if page >= len(chap5):
-        test5page1()
+        back()
     else:
         chapter5page(page)
 
