@@ -519,7 +519,7 @@ def nextpage5():
     global page, chap5
     page += 1
     if page >= len(chap5):
-        back()
+        test5page1()
     else:
         chapter5page(page)
 
