@@ -23,7 +23,7 @@ def homepagedef():
     Buttont3 = Button(text ="3", command = test3page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 236, y = 298)
     Buttont4 = Button(text ="4", command = test4page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 281, y = 298)
     Buttont5 = Button(text ="5", command = test5page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 326, y = 298)
-    Buttont6 = Button(text ="Final", command = donothing , fg = 'yellow', bg = 'black', height = 3, width = 10).place(x = 371, y = 298)
+    Buttont6 = Button(text ="Credits", command = credit , fg = 'yellow', bg = 'black', height = 3, width = 10).place(x = 371, y = 298)
 
     menubar = Menu(homepage)
     filemenu = Menu(menubar, tearoff=0)
