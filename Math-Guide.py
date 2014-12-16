@@ -15,8 +15,8 @@ def homepagedef():
     Button1 = Button(text ="Chapter 1 - Set", command = chapter1 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =1, column =0, sticky = W)
     Button2 = Button(text ="Chapter 2 - Logic", command = chapter2 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =2, column =0, sticky = W)
     Button3 = Button(text ="Chapter 3 - Reasoning", command = chapter3 , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =3, column =0, sticky = W)
-    Button4 = Button(text ="Chapter 4 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =4, column =0, sticky = W)
-    Button5 = Button(text ="Chapter 5 - propositional logic", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =5, column =0, sticky = W)
+    Button4 = Button(text ="Chapter 4 - Real Number", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =4, column =0, sticky = W)
+    Button5 = Button(text ="Chapter 5 - Number Theory", command = donothing , fg = 'black', bg = 'yellow', height = 2, width = 63).grid(row =5, column =0, sticky = W)
     texti = Label(text = 'test-->Chapter', fg = 'yellow', bg = 'black', height = 3, width = 20).grid(row =6, column =0, sticky = W)
     Buttont1 = Button(text ="1", command = test1page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 146, y = 298)
     Buttont2 = Button(text ="2", command = test2page1gui , fg = 'yellow', bg = 'black', height = 3, width = 5).place(x = 191, y = 298)
@@ -56,7 +56,9 @@ def closehomepage():
 def chapter1():
     """Chapter one recreate new window"""
     homepage.destroy()
-    global set_page
+    global set_page, page, chap1
+    chap1 = ["Set_page1.gif", "Set_page2.gif", "Set_page3.gif", "Set_page4.gif", "Set_page5.gif", "Set_page6.gif", "Set_page7.gif"]
+    page = 0
     set_page = Tk()
     set_page.geometry('875x600')
     photo = PhotoImage(file="Set_page1.gif")
@@ -74,61 +76,35 @@ def chapter1():
     helpmenu.add_command(label="Credits", command = credit)
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
-    Buttont1 = Button(text ="Next", command = chapter1page2 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
+    Buttont1 = Button(text ="Next", command = nextpage1 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
+
+def nextpage1():
+    """control page to show"""
+    global page, chap1
+    page += 1
+    if page >= len(chap1):
+        test1page1()
+    else:
+        chapter1page(page)
+
+def chapter1page(page):
+    """once of page"""
+    global chap1
+    photo = PhotoImage(file=chap1[page])
+    label = Label(image=photo)
+    label.image = photo
+    label.grid(row =0, column =0)
+    Buttont1 = Button(text ="Next", command = nextpage1 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+
+    
 def close_set():
     """Exit the program while in chapter"""
     exits = tkMessageBox.askyesno('Exit', 'Are you sure?')
     if exits > 0:
         set_page.destroy()
-
-def chapter1page2():
-    """once of page"""
-    photo = PhotoImage(file="Set_page2.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter1page3 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
-
-def chapter1page3():
-    """once of page"""
-    photo = PhotoImage(file="Set_page3.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter1page4 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
-
-def chapter1page4():
-    """once of page"""
-    photo = PhotoImage(file="Set_page4.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter1page5 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
-    
-def chapter1page5():
-    """once of page"""
-    photo = PhotoImage(file="Set_page5.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter1page6 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
-
-def chapter1page6():
-    """once of page"""
-    photo = PhotoImage(file="Set_page6.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter1page7 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
-
-def chapter1page7():
-    """once of page"""
-    photo = PhotoImage(file="Set_page7.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = test1page1 , fg = 'black', bg = 'yellow', height = 2, width = 5).place(x = 750, y = 498)
 
 def test1page1():
     """page for test"""
@@ -216,7 +192,7 @@ def correct():
     """Correct box for reply the correct answer"""
     tkMessageBox.showinfo("Answer", "Correct!!")
     ans_page1()
-    
+   
 def test1page2():
     """test set page2"""
     photo = PhotoImage(file="Set_quiz2.gif")
@@ -259,9 +235,13 @@ def wrong():
     tkMessageBox.showinfo("Answer", "Nice Try but it's wrong!!")
 
 def chapter2():
-    """Chapter2 homepage"""
+    """Chapter one recreate new window"""
     homepage.destroy()
-    global set_page
+    global set_page, page, chap2
+    chap2 = ["logic1.gif", "logic2.gif", "logic3.gif", "logic4.gif", "logic5.gif", "logic6.gif", "logic7.gif",\
+             "logic8.gif", "logic9.gif", "logic10.gif", "logic11.gif", "logic12.gif", "logic13.gif", "logic14.gif",\
+             "logic15.gif", "logic16.gif", "logic17.gif", "logic18.gif", "logic19.gif", "logic20.gif"]
+    page = 0
     set_page = Tk()
     set_page.geometry('875x600')
     photo = PhotoImage(file="logic1.gif")
@@ -279,160 +259,30 @@ def chapter2():
     helpmenu.add_command(label="Credits", command = credit)
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
-    Buttont1 = Button(text ="Next", command = chapter2page2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Next", command = nextpage2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
-def chapter2page2():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic2.gif")
+
+def nextpage2():
+    """control page to show"""
+    global page, chap2
+    page += 1
+    if page >= len(chap2):
+        test2page1()
+    else:
+        chapter2page(page)
+
+def chapter2page(page):
+    """once of page"""
+    global chap2
+    photo = PhotoImage(file=chap2[page])
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Next", command = nextpage2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
-def chapter2page3():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic3.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page4():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic4.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page5():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic5.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page6 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page6():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic6.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page7 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page7():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic7.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page8 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page8():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic8.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page9 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page9():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic9.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page10 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page10():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic10.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page11 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page11():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic11.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page12 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page12():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic12.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page13 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page13():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic13.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page14 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page14():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic14.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page15 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page15():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic15.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page16 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page16():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic16.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page17 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page17():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic17.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page18 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page18():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic18.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page19 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page19():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic19.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter2page20 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter2page20():
-    """once of chapter2 page"""
-    photo = PhotoImage(file="logic20.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = test2page1 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
+  
 def test2page1():
     """test chap2 page1"""
     photo = PhotoImage(file="logic_quiz1.gif")
@@ -466,9 +316,11 @@ def correct3():
     tkMessageBox.showinfo("Answer", "Correct!!")
 
 def chapter3():
-    """Chapter3"""
+    """Chapter one recreate new window"""
     homepage.destroy()
-    global set_page
+    global set_page, page, chap3
+    chap3 = ["reasoning.gif", "reasoning2.gif", "reasoning3.gif", "reasoning4.gif", "reasoning5.gif", "reasoning6.gif"]
+    page = 0
     set_page = Tk()
     set_page.geometry('875x600')
     photo = PhotoImage(file="reasoning.gif")
@@ -486,47 +338,28 @@ def chapter3():
     helpmenu.add_command(label="Credits", command = credit)
     menubar.add_cascade(label = "Help", menu = helpmenu)
     set_page.config(menu=menubar)
-    Buttont1 = Button(text ="Next", command = chapter3page2 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Next", command = nextpage3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
-def chapter3page2():
-    """once of chapter3 page"""
-    photo = PhotoImage(file="reasoning2.gif")
+
+def nextpage3():
+    """control page to show"""
+    global page, chap3
+    page += 1
+    if page >= len(chap3):
+        test_chap3()
+    else:
+        chapter3page(page)
+
+def chapter3page(page):
+    """once of page"""
+    global chap3
+    photo = PhotoImage(file=chap3[page])
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter3page3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter3page3():
-    """once of chapter3 page"""
-    photo = PhotoImage(file="reasoning3.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter3page4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter3page4():
-    """once of chapter3 page"""
-    photo = PhotoImage(file="reasoning4.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter3page5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter3page5():
-    """once of chapter3 page"""
-    photo = PhotoImage(file="reasoning5.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = chapter3page6 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
-
-def chapter3page6():
-    """once of chapter3 page"""
-    photo = PhotoImage(file="reasoning6.gif")
-    label = Label(image=photo)
-    label.image = photo
-    label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Next", command = test_chap3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Next", command = nextpage3 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)    
 
 def test_chap3():
     """test by using typing for answer"""
