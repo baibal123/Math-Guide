@@ -506,7 +506,7 @@ def nextpage4():
     global page, chap4
     page += 1
     if page >= len(chap4):
-        back()
+        test4page1()
     else:
         chapter4page(page)
 
@@ -515,7 +515,7 @@ def backpage4():
     global page, chap4
     page -= 1
     if page < 0:
-        test4page1()
+        back()
     else:
         chapter4page(page)
 
@@ -584,7 +584,7 @@ def nextpage5():
     global page, chap5
     page += 1
     if page >= len(chap5):
-        back()
+        test5page1()
     else:
         chapter5page(page)
 
@@ -593,7 +593,7 @@ def backpage5():
     global page, chap5
     page -= 1
     if page < 0:
-        test5page1()
+        back()
     else:
         chapter5page(page)
 
