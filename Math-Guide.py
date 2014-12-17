@@ -210,7 +210,7 @@ def test4page1gui():
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Answer", command = answer5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Answer", command = answer4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
     Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 15, y = 550)
     menubar = Menu(set_page)
     filemenu = Menu(menubar, tearoff=0)
@@ -537,16 +537,16 @@ def test4page1():
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
-    Buttont1 = Button(text ="Answer", command = answer5 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
+    Buttont1 = Button(text ="Answer", command = answer4 , fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 775, y = 550)
     Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 15, y = 550)
 
-def answer5():
+def answer4():
     photo = PhotoImage(file="ansreal.gif")
     label = Label(image=photo)
     label.image = photo
     label.grid(row =0, column =0)
     Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
-    Backpage = Button(text ="Back", command = test5quiz, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+    Backpage = Button(text ="Back", command = test4page1, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 def chapter5():
     """Chapter one recreate new window"""
@@ -624,7 +624,7 @@ def answer5():
     label.image = photo
     label.grid(row =0, column =0)
     Backhome = Button(text ="HOME", command = back, fg = 'black', bg = 'lightblue', height = 2, width = 10).place(x = 775, y = 15)    
-    Backpage = Button(text ="Back", command = test5quiz, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
+    Backpage = Button(text ="Back", command = test5page1, fg = 'black', bg = 'yellow', height = 2, width = 10).place(x = 15, y = 550)
 
 homepagedef()
 ##import sys
